@@ -1,6 +1,6 @@
 %define	module 	XML-Generator
 %define	name	perl-%{module}
-%define version	1.0
+%define version	1.01
 %define release %mkrel 1
 
 Summary:	A module to help in generating XML documents from perl
