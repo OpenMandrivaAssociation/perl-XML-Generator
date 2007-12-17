@@ -12,7 +12,6 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{module}
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/%{module}-%{version}.tar.bz2
 BuildRequires:	perl-devel >= 5.6
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
 
 %description
