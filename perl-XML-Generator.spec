@@ -1,26 +1,25 @@
-%define	module 	XML-Generator
-%define	name	perl-%{module}
-%define version	1.01
-%define release %mkrel 3
+%define	upstream_name 	 XML-Generator
+%define upstream_version 1.01
+
+Name: 		perl-%{upstream_name}
+Version: 	%perl_convert_version %{upstream_version}
+Release: 	%mkrel 1
 
 Summary:	A module to help in generating XML documents from perl
-Name: 		%{name}
-Version: 	%{version}
-Release: 	%{release}
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{module}
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/%{module}-%{version}.tar.bz2
-BuildRequires:	perl-devel >= 5.6
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildArch:	noarch
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
-%{module} is a module to help in generating XML documents or in
+%{upstream_name} is a module to help in generating XML documents or in
 producing DOM trees .
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -39,4 +38,3 @@ CFLAGS="$RPM_OPT_FLAGS" %{__perl} Makefile.PL INSTALLDIRS=vendor
 %doc README Changes 
 %{perl_vendorlib}/XML/*
 %{_mandir}/man3/*
-
