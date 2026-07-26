@@ -1,15 +1,13 @@
 %define	upstream_name 	 XML-Generator
-%define upstream_version 1.13
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.13
+Release:	2
 
 Summary:	A module to help in generating XML documents from perl
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/timlegge/perl-XML-Generator
-Source0:	https://cpan.metacpan.org/authors/id/T/TI/TIMLEGGE/XML-Generator-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/T/TI/TIMLEGGE/XML-Generator-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -20,7 +18,7 @@ BuildArch:	noarch
 producing DOM trees .
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 CFLAGS="%{optflags}" perl Makefile.PL INSTALLDIRS=vendor
@@ -46,9 +44,7 @@ rm -f %{buildroot}%{perl_archlib}/perllocal.pod
 
 * Tue Jul 28 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 1.10.0-1mdv2010.0
 + Revision: 401860
-- rebuild using %%perl_convert_version
-
-* Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 1.01-3mdv2009.0
+- rebuild using %1.13 Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 1.01-3mdv2009.0
 + Revision: 242244
 - rebuild
 - kill re-definition of %%buildroot on Pixel's request
