@@ -2,7 +2,7 @@
 %define upstream_version 1.13
 Name:		perl-%{upstream_name}
 Version:	1.13
-Release:	1
+Release:	2
 
 Summary:	A module to help in generating XML documents from perl
 License:	GPL+ or Artistic
@@ -19,7 +19,7 @@ BuildArch:	noarch
 producing DOM trees .
 
 %prep
-%setup -q -n %{upstream_name}-%{version}
+%setup -q -n XML-Generator-1.13
 
 %build
 CFLAGS="%{optflags}" perl Makefile.PL INSTALLDIRS=vendor
