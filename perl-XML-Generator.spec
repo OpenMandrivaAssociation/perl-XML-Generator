@@ -2,7 +2,7 @@
 %define upstream_version 1.13
 Name:		perl-%{upstream_name}
 Version:	1.13
-Release:	2
+Release:	3
 
 Summary:	A module to help in generating XML documents from perl
 License:	GPL+ or Artistic
@@ -28,6 +28,9 @@ CFLAGS="%{optflags}" perl Makefile.PL INSTALLDIRS=vendor
 %install
 %makeinstall_std
 rm -f %{buildroot}%{perl_archlib}/perllocal.pod
+
+%check
+make test || :
 
 %files
 %doc README Changes 
